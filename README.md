@@ -1,13 +1,15 @@
-# {PROJECT NAME}
-## NHS England Digitial Analytics and Research Team - PhD Internship Project
+# Privacy Fingerprint (PrivFp) - Proof of Concept
+## NHS England Digitial Analytics and Research Team
+
+### :warning: Warning to Users :warning:
+
+This codebase is a proof of concept and should only be used for demonstration purposes within a controlled environment. The components are not a live product and should not be deployed in a live or production environment.
 
 ### About the Project
 
 [![status: experimental](https://github.com/GIScience/badges/raw/master/status/experimental.svg)](https://github.com/GIScience/badges#experimental)
 
-This repository holds code for the {PROJECT NAME} {SHORT DESCRIPTION}
-
-[Link to original project propsoal](https://nhsx.github.io/nhsx-internship-projects/)
+This repository holds code for the Privacy Fingerprint (PrivFp), a proof of concept modular tool to provide a privacy risk score to healthcare free-text data.  This project was delivered as 
 
 _**Note:** Only public or fake data are shared in this repository._
 
