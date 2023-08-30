@@ -1,0 +1,69 @@
+synthea:
+  # The UK customisations for Synthea support a limited number of counties:
+  # Aberdeenshire     Angus             Bedfordshire      Berkshire
+  # Buckinghamshire   Cambridgeshire    Cheshire          Clackmannanshire
+  # Cornwall          County Antrim     County Armagh     County Down
+  # County Fermanagh  County LondonderryCounty Tyrone     Cumbria
+  # Derbyshire        Devon             Dorset            Dunbartonshire
+  # East Lothian      East Sussex       Essex             Fife
+  # Gloucestershire   Gwynedd           Hampshire         Herefordshire
+  # Hertfordshire     Isle Of Barra     Isle Of Wight     Kent
+  # Lancashire        Leicestershire    Lincolnshire      Merseyside
+  # Midlothian        Norfolk           North Yorkshire   Northamptonshire
+  # Northumberland    Nottinghamshire   Orkney            Oxfordshire
+  # Powys             Renfrewshire      Shetland Islands  Shropshire
+  # Somerset          South Yorkshire   Staffordshire     Suffolk
+  # Surrey            Tyne And Wear     Warwickshire      West Lothian
+  # West Midlands     West Sussex       West Yorkshire    Wiltshire
+  # Worcestershire
+  county: "Hampshire"
+  # Synthea generates 53 different types of medical encounter. The most likely
+  # to be used are:
+  #  Encounter for symptom
+  #  Hospital admission
+  #  Emergency room admission
+  encounter_type: "Encounter for symptom"
+  # This is the nunmber of living people generated. 
+  # Additional people may be generated if some have died.
+  # Some people may not have had the specified encounter type.
+  num_records: 100
+  extra_config: {}
+  # Although Synthea generates multiple records per person our current 
+  # privacy score assumes that each individual is included only once.
+  records_per_patient: 1
+  # Each individual will be randomly assigned an ethnicity from the list below.
+  ethnicity_types: 
+    - "White - British"
+    - "White - Irish"
+    - "White - Any other White background"
+    - "Mixed - White and Black Caribbean"
+    - "Mixed - White and Black African"
+    - "Mixed - White and Asian"
+    - "Mixed - Any other mixed background"
+    - "Asian or Asian British - Indian"
+    - "Asian or Asian British - Pakistani"
+    - "Asian or Asian British - Bangladeshi"
+    - "Asian or Asian British - Any other Asian background"
+    - "Black or Black British - Caribbean"
+    - "Black or Black British - African"
+    - "Black or Black British - Any other Black background"
+    - "Other Ethnic Groups - Chinese"
+    - "Other Ethnic Groups - Any other ethnic group"
+openai:
+  model: "text-davinci-003"
+  max_tokens: 256
+  temperature: 0.7
+  # The prompt controls the format and structure of the generated clinical
+  # notes. Good options are:
+  # - Using prose, describe the following patient for their doctor
+  # - Describe this patient as if you were a medical doctor
+  # - Create a clinical note that might be written by an NHS doctor after seeing the following patient
+  # - You are a trainee doctor in the NHS. You have seen the following patient and must 
+  #       now write up your notes for their regular doctor (long notes, increase max_tokens)
+  prompt: "Describe this patient as if you were a medical doctor."
+scoring:
+# Two encoding schemes are supported, one-hot and rarest
+  encoding_scheme: "one-hot"
+# The run time for pycorrectmatch increases with the number of columns
+# Values above ~45 columns and ~300k records can take significant time
+  max_columns: 30

@@ -8,8 +8,12 @@ This codebase is a proof of concept and should only be used for demonstration pu
 ### About the Project
 
 [![status: experimental](https://github.com/GIScience/badges/raw/master/status/experimental.svg)](https://github.com/GIScience/badges#experimental)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![Tests](https://github.com/nhsengland/privfp-poc/actions/workflows/tests.yml/badge.svg)
 
-This repository holds code for the Privacy Fingerprint (PrivFp), a proof of concept modular tool to provide a privacy risk score to healthcare free-text data.  This project was delivered as 
+This repository holds code for Privacy Fingerprint (PrivFp), a proof of concept modular tool to provide a privacy risk score to healthcare free-text data.  
+
+This project was delivered between January - March 2023 by a commission delivered as part of the [Accelerated Capability Environment (ACE)](https://www.gov.uk/government/groups/accelerated-capability-environment-ace).
 
 _**Note:** Only public or fake data are shared in this repository._
 

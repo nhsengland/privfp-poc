@@ -1,0 +1,16 @@
+synthea:
+  install_directory: "/path/to/synthea/install/with/gb/customisations"
+openai:
+  api_key: "openai-api-key"
+  batch_size: 20
+  delay_on_error: 1
+  backoff_on_error: 2
+  max_delay_on_error: 360
+  retry_attempts: 10
+comprehendmedical:
+  profile: default
+  service: comprehendmedical
+cache:
+  file_name: "/path/to/location/of/cache.sqlite"
+pcm:
+  path_to_julia: "/path/to/julia/installation/location/bin/julia"

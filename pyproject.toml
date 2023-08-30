@@ -1,0 +1,22 @@
+[tool.black]
+line-length = 79
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.nox
+  | build
+  | dist
+  | \.eggs
+)/
+'''
+
+[tool.isort]
+py_version = 38
+profile = "black"
+
+[tool.setuptools_scm]
+
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
