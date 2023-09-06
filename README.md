@@ -9,7 +9,7 @@
 
 [![status: experimental](https://github.com/GIScience/badges/raw/master/status/experimental.svg)](https://github.com/GIScience/badges#experimental)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![Tests](https://github.com/nhsengland/privfp-poc/actions/workflows/tests.yml/badge.svg)
+[![ci-pipeline](https://github.com/nhsengland/privfp-poc/actions/workflows/ci-pipeline.yml/badge.svg)](https://github.com/nhsengland/privfp-poc/actions/workflows/ci-pipeline.yml)
 
 This repository holds code for Privacy Fingerprint (PrivFp), a proof of concept modular tool to provide a privacy risk score to healthcare free-text data.  The project was delivered between January and March 2023 by a commission delivered as part of the [Accelerated Capability Environment (ACE)](https://www.gov.uk/government/groups/accelerated-capability-environment-ace).
 
