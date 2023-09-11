@@ -91,11 +91,21 @@ def extract_date_of_birth(record):
     candidates = _extract_entity_type(record, "DATE")
     if len(candidates) == 0:
         return None
-    return sorted(
-        candidates,
-        key=lambda x: pd.to_datetime(x["Text"], errors="coerce"),
-        reverse=False,
-    )[0]["Text"]
+    filtered_candidates = [
+        candidate
+        for candidate in candidates
+        if pd.notnull(pd.to_datetime(candidate["Text"], errors="coerce"))
+    ]
+    if len(filtered_candidates) == 0:
+        return None
+    else:
+        return sorted(
+            filtered_candidates,
+            key=lambda candidate: pd.to_datetime(
+                candidate["Text"], errors="coerce"
+            ),
+            reverse=False,
+        )[0]["Text"]
 
 
 def extract_disease(record):
@@ -112,11 +122,21 @@ def extract_date_of_visit(record):
     candidates = _extract_entity_type(record, "DATE")
     if len(candidates) == 0:
         return None
-    return sorted(
-        candidates,
-        key=lambda x: pd.to_datetime(x["Text"], errors="coerce"),
-        reverse=True,
-    )[0]["Text"]
+    filtered_candidates = [
+        candidate
+        for candidate in candidates
+        if pd.notnull(pd.to_datetime(candidate["Text"], errors="coerce"))
+    ]
+    if len(filtered_candidates) == 0:
+        return None
+    else:
+        return sorted(
+            filtered_candidates,
+            key=lambda candidate: pd.to_datetime(
+                candidate["Text"], errors="coerce"
+            ),
+            reverse=True,
+        )[0]["Text"]
 
 
 def extract_department(record):
@@ -144,7 +164,7 @@ def extract_ethnicity(record):
 
 def extract_treatment(record):
     candidates = _extract_entity_type(record, "TREATMENT_NAME")
-    return [i["Text"] for i in candidates]
+    return [i["Text"].lower() for i in candidates]
 
 
 def extract_prescriptions(record):
