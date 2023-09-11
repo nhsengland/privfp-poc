@@ -39,13 +39,13 @@ def _compare_text(in_record: str, out_record: str) -> Tuple[float, int, float]:
 
 
 def _compare_date(in_record: str, out_record: str) -> Tuple[float, int, float]:
-    out_dob = pd.to_datetime(out_record, errors="coerce")
-    if pd.isnull(out_dob):
+    out_date = pd.to_datetime(out_record, errors="coerce")
+    if pd.isnull(out_date):
         summary = 0
-    elif pd.to_datetime(in_record) == out_dob:
-        summary = 100
     else:
-        summary = fuzz.ratio(in_record, out_record)
+        in_date_str = str(pd.to_datetime(in_record, errors="coerce").date())
+        out_date_str = str(pd.to_datetime(out_record, errors="coerce").date())
+        summary = fuzz.ratio(in_date_str, out_date_str)
     score = summary / 100
     return score, 1, summary
 
@@ -75,7 +75,8 @@ def compare_common_records(
 
     :param in_record: The base record to compare against, e.g. from synthea
     :param out_record: The record to compare, e.g. the record after LLM and NER
-    :returns: Total score, total possible score and a field-by-field breakdown"""
+    :returns: Total score, total possible score and a field-by-field breakdown
+    """
     overall_score = 0
     max_score = 0
     summary = {}
