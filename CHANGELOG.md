@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 Instructions on how to update this Changelog are available in the `Updating the Changelog` section of the [`CONTRIBUTING.md`](./CONTRIBUTING.md).  This project follows [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.2.1](https://github.com/nhsengland/privfp-poc/releases/tag/v0.2.1)
+
+- Minor update to README.md
+- Completion of Open Code Checklist
+
 ## [v0.2.0](https://github.com/nhsengland/privfp-poc/releases/tag/v0.2.0)
 
 Release of Privacy Fingerprint codebase after initial extension
