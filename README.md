@@ -3,7 +3,7 @@
 
 ### :warning: Warning to Users :warning:
 
-**This codebase is a proof of concept and should only be used for demonstration purposes within a controlled environment. The components are not a live product and should not be deployed in a live or production environment.**
+**This codebase is a proof of concept and should only be used for demonstration purposes within a controlled environment. The components are not a live product and should not be deployed in a live or production environment.  Further, some components require access to external services in its current form, so users should be careful as to not expose sensitive data to them.**
 
 ### About the Project
 
