@@ -142,6 +142,15 @@ After copying across the internationalization changes the original test suite wi
 
 The installation location of Synthea is required to run the tool and should be copied into the config file.
 
+##### Other dependencies
+
+If you wish to use a virtual environment, use the [requirements.txt](requirements.txt) file to load required packages. Create an environment called env (or other name of your choice) as follows: 
+```
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
+
 ### Usage
 
 The privacy fingerprinting tool can be used as a command line interface and via notebooks. 
