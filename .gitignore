@@ -10,8 +10,10 @@
 *.pot
 __pycache__/*
 .cache/*
+*cache*
 .*.swp
 */.ipynb_checkpoints/*
+
 
 # Project files
 .ropeproject
@@ -49,6 +51,7 @@ cover/*
 # Per-project virtualenvs
 .venv*/
 .env
+*env
 
 # exclude data from source control by default
 data/
